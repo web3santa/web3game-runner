@@ -1,3 +1,4 @@
+
 import { updateGround, setupGround } from "./ground.js"
 import { updatePlayer, setupPlayer, getPlayerRect, setPlayerLose } from "./player.js"
 import { updateObstacle, setupObstacle, getObstacleRects } from "./obstacle.js"
@@ -55,7 +56,7 @@ function isCollision(rect1, rect2) {
     rect1.left < rect2.right &&
     rect1.top < rect2.bottom &&
     rect1.right > rect2.left &&
-    rect1.bottom > rect2.top 
+    rect1.bottom > rect2.top
   )
 }
 
@@ -78,7 +79,7 @@ function updateScore(delta) {
   // kolku score dobivas tuka se presmetue
   // console.log("delta u update score function = ", delta)
   score += delta * 0.01
-  scoreElem.textContent = `Wei score: ${Math.floor(score)}` 
+  scoreElem.textContent = `Wei score: ${Math.floor(score)}`
 }
 
 // kaa kje pozne
@@ -95,12 +96,11 @@ function handleStart() {
   window.requestAnimationFrame(update)
 }
 
-
 window.totalNFTScore = 0
 window.totalGweiScore = 0
 
 function handleLose() {
-  window.totalGweiScore += Math.floor(score)  
+  window.totalGweiScore += Math.floor(score)
   window.totalNFTScore += nftScore
 
   nftTotalScoreElem.textContent = `NFT total score: ${window.totalNFTScore}`
@@ -127,4 +127,3 @@ function setPixelToGameScale() {
   gameElem.style.width = `${GAME_WIDTH * gameToPixelScale}px`
   gameElem.style.height = `${GAME_HEIGHT * gameToPixelScale}px`
 }
-
